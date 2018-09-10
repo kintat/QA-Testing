@@ -1,0 +1,68 @@
+#line 2 "sketch.ino"
+#include <ArduinoUnit.h>
+
+// Test out whether the testing is running continuous
+testing(continuous)
+{
+  unsigned long t = millis();
+  assertLessOrEqual(t,100);
+  if (t >= 100) pass();
+}
+
+// Test out whether the program is slow
+testing(slow) { if (millis() > 1000) pass(); } 
+
+// The function millis() Returns the number of milliseconds since the Arduino board began running the current program.
+
+
+// Test out assertEqual and caluclation in the Arduino
+test(ok) 
+{
+  int x=3;
+  int y=3;
+  int z = x*y;
+  assertEqual(z,9);
+}
+
+
+// Test out assertNotEqual
+test(bad)
+{
+  int x=3;
+  int y=3;
+  assertNotEqual(x,y);
+}
+
+// Test the assertTrue function for true
+test(simpletrue)
+{
+  assertTrue(true);
+}
+
+// Test the assertTrue function for false
+test(simplefalse)
+{
+  assertTrue(false);
+}
+
+// test out whether the program is too slow by using assertTestDone for the slow test
+testing(too_slow){
+  if (millis() > 100) {
+    assertTestDone(slow);
+    pass();
+  }
+}
+
+
+void setup()
+{
+  Serial.begin(9600);
+  while(!Serial); // for the Arduino Leonardo/Micro only
+}
+
+void loop()
+{
+  Test::run(); 
+  Serial.println(millis());
+  delay(10);
+}

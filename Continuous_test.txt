@@ -1,0 +1,22 @@
+#line 2 "sketch.ino"
+#include <ArduinoUnit.h>
+
+testing(continuous)
+{
+  unsigned long t = millis();
+  assertLessOrEqual(t,100);
+  if (t >= 100) pass();
+}
+
+void setup()
+{
+  Serial.begin(9600);
+  while(!Serial); // for the Arduino Leonardo/Micro only
+}
+
+void loop()
+{
+  Test::run(); 
+  Serial.println(millis());
+  delay(10);
+}

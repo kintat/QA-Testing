@@ -1,0 +1,74 @@
+0
+Assertion failed: (x=3) != (y=3), file sketch.ino, line 33.
+Test bad failed.
+Test ok passed.
+Assertion failed: (false=0) == (true=1), file sketch.ino, line 45.
+Test simplefalse failed.
+Test simpletrue passed.
+Assertion failed: (test_slow_instance.state=1) >= (Test::DONE_SKIP=2), file sketch.ino, line 51.
+Test too_slow failed.
+291
+Assertion failed: (t=307) <= (100=100), file sketch.ino, line 8.
+Test continuous failed.
+391
+406
+416
+427
+437
+447
+457
+467
+478
+488
+497
+507
+518
+528
+538
+548
+559
+569
+579
+589
+600
+610
+620
+630
+641
+651
+660
+670
+680
+691
+701
+711
+721
+732
+742
+752
+762
+773
+783
+793
+803
+813
+823
+833
+843
+854
+864
+874
+884
+894
+905
+915
+925
+935
+946
+956
+966
+975
+986
+996
+Test slow passed.
+Test summary: 3 passed, 4 failed, and 0 skipped, out of 7 test(s).
